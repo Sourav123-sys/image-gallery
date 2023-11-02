@@ -3,7 +3,7 @@
 
 
 import React from "react";
-
+import { AiFillDelete } from 'react-icons/ai';
 const GalleryHeader = ({
     selectPictures,
     setSelectPictures,
@@ -33,10 +33,10 @@ const GalleryHeader = ({
                     )}
                 </h1>
                 <button
-  className="text-red-500 font-medium hover:bg-red-600 hover:text-white hover:scale-105 transform transition-transform hover:duration-300 p-2 rounded-lg border border-red-600 hover:border-red-700"
+  className="text-red-500 font-medium hover:bg-red-600 hover:text-white hover:scale-105 transform transition-transform hover:duration-300 p-2 rounded-lg border border-red-600 hover:border-red-700 flex items-center justify-center"
   onClick={handleDeleteFile}
 >
-  Delete files
+<AiFillDelete/> Delete files
 </button>
 
 
