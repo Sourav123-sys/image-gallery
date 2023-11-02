@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 
  import ImageGallery from "./ImageGallery";
+ import ImageUpload from "./ImageUpload";
 
 import { Inter } from "next/font/google";
 import images from "@/data/images";
@@ -24,9 +25,9 @@ const Gallery = () => {
   
       const newImages = Array.from(selectedFiles).map((file, index) => {
         const id = pictures.length + index + 1;
-        const thumbnail = URL.createObjectURL(file);
+        const picture = URL.createObjectURL(file);
   
-        return { id, thumbnail };
+        return { id, picture };
       });
   
       setPictures([...pictures, ...newImages]);
@@ -71,11 +72,7 @@ const Gallery = () => {
       >
         <section className="lg:w-1/2 md:w-3/4 w-full bg-white rounded-lg shadow">
           <div className="flex flex-col gap-y-2">
-            {/* <GalleryHeader
-              selectPictures={selectPictures}
-              setSelectPictures={setSelectPictures}
-              handleDeleteClick={handleDeleteClick}
-            /> */}
+           
             <hr />
             <section className="h-full w-full p-6">
               <div
@@ -95,7 +92,7 @@ const Gallery = () => {
                     draggedIndex={draggedIndex}
                   />
                 ))}
-                {/* <ImageUploader handleFileChange={handleFileChange} /> */}
+                <ImageUpload handleFileChange={handleFileChange} />
               </div>
             </section>
           </div>
