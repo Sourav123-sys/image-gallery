@@ -6,6 +6,7 @@ import React, { useState } from "react";
 
  import ImageGallery from "./ImageGallery";
  import ImageUpload from "./ImageUpload";
+ import  Header from "./Header";
 
 import { Inter } from "next/font/google";
 import images from "@/data/images";
@@ -72,7 +73,11 @@ const Gallery = () => {
       >
         <section className="lg:w-1/2 md:w-3/4 w-full bg-white rounded-lg shadow">
           <div className="flex flex-col gap-y-2">
-           
+          <Header
+            selectPictures={selectPictures}
+            setSelectPictures={setSelectPictures}
+            handleDeleteClick={handleDeleteClick}
+          />
             <hr />
             <section className="h-full w-full p-6">
               <div
