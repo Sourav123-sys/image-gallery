@@ -2,6 +2,7 @@
 "use client"
 import React from "react";
 import Image from "next/image";
+import Drop from "./Drop";
 
 
 const ImageGallery = ({
@@ -64,7 +65,11 @@ const ImageGallery = ({
           else setSelectPictures([...selectPictures, image]);
         }}
       />
-     
+      <Drop
+        dragging={dragging}
+        draggedIndex={draggedIndex}
+        image={image}
+      />
     </div>
   );
 };

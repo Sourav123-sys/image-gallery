@@ -10,7 +10,7 @@ import React, { useState } from "react";
 
 import { Inter } from "next/font/google";
 import images from "@/data/images";
-
+import toast from 'react-hot-toast';
 const inter = Inter({ subsets: ["latin"] });
 
 const Gallery = () => {
@@ -21,7 +21,7 @@ const Gallery = () => {
     const [draggedImage, setDraggedImage] = useState(null);
     const [draggedIndex, setDraggedIndex] = useState(null);
   
-    const handleFileChange = (e) => {
+    const handleFileUpload = (e) => {
       const selectedFiles = e.target.files;
   
       const newImages = Array.from(selectedFiles).map((file, index) => {
@@ -32,15 +32,29 @@ const Gallery = () => {
       });
   
       setPictures([...pictures, ...newImages]);
+      toast('Image Uploaded.', {
+        duration: 3000, // 3 seconds
+        style: {
+          background: 'green',
+          color: 'white',
+        },
+      });
     };
   
-    const handleDeleteClick = () => {
+    const handleDeleteFile = () => {
       const updatedImages = pictures.filter(
         (image) => !selectPictures.some((selected) => selected.id === image.id)
       );
   
       setPictures(updatedImages);
       setSelectPictures([]);
+      toast('Image Deleted.', {
+        duration: 3000, // 3 seconds
+        style: {
+          background: 'red',
+          color: 'white',
+        },
+      });
     };
   
     const handleDragStart = (image) => {
@@ -76,7 +90,7 @@ const Gallery = () => {
           <Header
             selectPictures={selectPictures}
             setSelectPictures={setSelectPictures}
-            handleDeleteClick={handleDeleteClick}
+            handleDeleteFile={handleDeleteFile}
           />
             <hr />
             <section className="h-full w-full p-6">
@@ -97,7 +111,7 @@ const Gallery = () => {
                     draggedIndex={draggedIndex}
                   />
                 ))}
-                <ImageUpload handleFileChange={handleFileChange} />
+                <ImageUpload handleFileUpload={handleFileUpload} />
               </div>
             </section>
           </div>

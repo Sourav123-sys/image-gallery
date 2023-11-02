@@ -1,9 +1,13 @@
+
+"use client"
+
+
 import React from "react";
 
 const GalleryHeader = ({
     selectPictures,
     setSelectPictures,
-  handleDeleteClick,
+  handleDeleteFile,
 }) => {
   return (
     <nav className="py-4 px-6">
@@ -30,7 +34,7 @@ const GalleryHeader = ({
         </h1>
         <button
           className="text-red-500 font-medium hover:underline"
-          onClick={handleDeleteClick}
+          onClick={handleDeleteFile}
         >
           Delete files
         </button>
