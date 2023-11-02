@@ -1,3 +1,4 @@
- [Image-Gallery App](https://nextjs.org/) 
-## Getting Started
+
+## Image Gallery App
+ ## Demo : [Live Link](https://nextjs.org/) 
 
