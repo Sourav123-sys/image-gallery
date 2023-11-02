@@ -33,7 +33,7 @@ const Gallery = () => {
   
       setPictures([...pictures, ...newImages]);
       toast('Image Uploaded.', {
-        duration: 3000, // 3 seconds
+        duration: 3000, 
         style: {
           background: 'green',
           color: 'white',
@@ -49,7 +49,7 @@ const Gallery = () => {
       setPictures(updatedImages);
       setSelectPictures([]);
       toast('Image Deleted.', {
-        duration: 3000, // 3 seconds
+        duration: 3000, 
         style: {
           background: 'red',
           color: 'white',
